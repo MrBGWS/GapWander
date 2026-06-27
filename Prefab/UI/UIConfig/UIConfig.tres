@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="UIConfig" format=3 uid="uid://cge50ub42maeb"]
+
+[ext_resource type="Script" uid="uid://e10c6gdm16md" path="res://Script/UI/UIconfig.gd" id="1_ub1wn"]
+
+[resource]
+script = ExtResource("1_ub1wn")
+metadata/_custom_type_script = "uid://e10c6gdm16md"

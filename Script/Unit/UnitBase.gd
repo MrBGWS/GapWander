@@ -2,7 +2,7 @@ class_name UnitBase
 
 extends Node2D
 
-var AttendPackedScene = preload("res://Prefab/Unit/attend_show.tscn")
+#var AttendPackedScene = preload("res://Prefab/Unit/attend_show.tscn")
 @onready var bodySprite = $BodyShow
 @onready var hitParticles = $HitParticles
 @onready var HpProgressBar = $HpProgressBar
@@ -46,7 +46,7 @@ var SkillIDList:Array[int]:
 ##技能列表
 var SkillList:Array[SkillBase] = []
 ##物品列表
-var Items:Array[ItemData] = []
+#var Items:Array[ItemData] = []
 
 @export var data:UnitData = UnitData.new()
 
@@ -148,12 +148,12 @@ func SetShader_BlinkIntensity(value:float):
 func Death():
     self.queue_free()
 
-##显示一个提示图标在头顶
-func ShowWarning(time:float, spriteID:int):
-    var prefab:AttendShow = AttendPackedScene.instantiate()
-    add_child(prefab)
-    prefab.position.y -= 30
-    prefab.Show(time)
+###显示一个提示图标在头顶
+#func ShowWarning(time:float, spriteID:int):
+    #var prefab:AttendShow = AttendPackedScene.instantiate()
+    #add_child(prefab)
+    #prefab.position.y -= 30
+    #prefab.Show(time)
 
 #做错动作或没做动作 抖动一下
 func Shake():
@@ -170,7 +170,7 @@ func Shake():
         tween.tween_property(self, "position", original_pos + offset, duration / shakes / 2)
         tween.tween_property(self, "position", original_pos, duration / shakes / 2)
     
-    ShowWarning(duration, 1)
+    #ShowWarning(duration, 1)
 
 func OnHpChange():
     if HpProgressBar != null:
