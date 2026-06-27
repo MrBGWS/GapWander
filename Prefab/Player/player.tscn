@@ -1,15 +1,28 @@
 [gd_scene format=3 uid="uid://ccy2lr6672cjx"]
 
 [ext_resource type="SpriteFrames" uid="uid://dd84moekrfw08" path="res://Asset/Animation/SpriteFrames/anim_littlenight.tres" id="1_71csl"]
+[ext_resource type="Script" uid="uid://bx24g6pefoi6m" path="res://Script/Unit/PlayerUnit.gd" id="1_ed584"]
 [ext_resource type="Texture2D" uid="uid://b5fr75pavqyi2" path="res://Asset/Art/weapon/sword.png" id="2_o1eh6"]
+[ext_resource type="PackedScene" uid="uid://dd7wpp80spfr" path="res://Prefab/Particle/hit_particles.tscn" id="4_w6ttw"]
+[ext_resource type="PackedScene" uid="uid://bbp2urr1fkoyk" path="res://Prefab/Player/player_unit_ui.tscn" id="5_stuvd"]
 
 [node name="Player" type="Node2D" unique_id=688343418]
+script = ExtResource("1_ed584")
 
-[node name="Body" type="AnimatedSprite2D" parent="." unique_id=1568599467]
+[node name="Render" type="Node2D" parent="." unique_id=955818014]
+scale = Vector2(3, 3)
+
+[node name="Body" type="AnimatedSprite2D" parent="Render" unique_id=1568599467]
 sprite_frames = ExtResource("1_71csl")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="Weapon" type="Sprite2D" parent="." unique_id=979399754]
+[node name="Weapon" type="Sprite2D" parent="Render" unique_id=979399754]
 position = Vector2(-20, -2)
 texture = ExtResource("2_o1eh6")
+
+[node name="HitParticles" parent="Render" unique_id=1931794354 instance=ExtResource("4_w6ttw")]
+
+[node name="PlayerUnitUI" parent="." unique_id=1913141245 instance=ExtResource("5_stuvd")]
+offset_top = 43.0
+offset_bottom = 83.0

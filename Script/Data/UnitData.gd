@@ -7,6 +7,7 @@ extends Resource
 @export var HP:float
 @export var MaxHp:float
 @export var AttackPower:float
+@export var Speed:float = 200
 @export var SkillIDList:Array[int]
 
 #图片 动画资源 需要只有id 因为unitdata很可能要网络传输

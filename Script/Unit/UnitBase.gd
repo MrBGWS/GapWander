@@ -1,13 +1,22 @@
 class_name UnitBase
 
 extends Node2D
-
+#单位数据
+@export var data:UnitData = UnitData.new()
+# 输入的运动方向，可能是玩家输入也可能是脚本输入，一视同仁
+var input_vector:Vector2
 #var AttendPackedScene = preload("res://Prefab/Unit/attend_show.tscn")
-@onready var bodySprite = $BodyShow
-@onready var hitParticles = $HitParticles
-@onready var HpProgressBar = $HpProgressBar
+@onready var bodySprite = $Render/Body
+@onready var hitParticles = $Render/HitParticles
+@onready var HpProgressBar = $PlayerUnitUI/HpProgressBar
+@onready var NameLabel:RichTextLabel = $PlayerUnitUI/PlayerName
 var turnAction:Callable
 var isTurnAcionFinish:bool = true
+
+## 当前实际移动速度（受buff/debuff影响）
+var current_move_speed: float:
+    get:
+        return data.Speed
 
 @export var team:int = 1
 var Hp:float:
@@ -48,8 +57,6 @@ var SkillList:Array[SkillBase] = []
 ##物品列表
 #var Items:Array[ItemData] = []
 
-@export var data:UnitData = UnitData.new()
-
 var is_jumping:bool = false
 var is_dodging:bool = false
 
@@ -76,7 +83,36 @@ func _ready() -> void:
     self.bodySprite.material.shader = shader
 
 func _process(delta: float) -> void:
-    pass
+    _process_movement(delta)
+
+## 处理基于 input_vector 的多向移动
+func _process_movement(delta: float) -> void:
+    # 跳跃/闪避期间不响应移动输入
+    if is_jumping or is_dodging:
+        return
+
+    # input_vector 为外部设置，可能来自玩家输入或AI脚本
+    if input_vector == Vector2.ZERO:
+        return
+
+    # 归一化方向向量，确保对角线移动速度一致
+    var direction: Vector2 = input_vector.normalized()
+
+    # 应用移动
+    position += direction * current_move_speed * delta
+
+    # 根据水平方向翻转精灵（左负右正）
+    _update_sprite_facing(direction)
+
+## 根据移动方向翻转精灵
+func _update_sprite_facing(direction: Vector2) -> void:
+    if bodySprite == null:
+        return
+    if direction.x < -0.01:
+        bodySprite.scale.x = -abs(bodySprite.scale.x)  # 面向左
+    elif direction.x > 0.01:
+        bodySprite.scale.x = abs(bodySprite.scale.x)    # 面向右
+    # 水平分量极小（纯上下移动）时保持当前朝向
 
 func TurnStart():
     isTurnAcionFinish = false

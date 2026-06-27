@@ -5,4 +5,4 @@
 [node name="GapRoom" type="Node2D" unique_id=892201130]
 
 [node name="Player" parent="." unique_id=688343418 instance=ExtResource("1_sd4re")]
-position = Vector2(87, 63)
+position = Vector2(508, 283)

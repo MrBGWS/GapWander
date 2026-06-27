@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bbp2urr1fkoyk"]
+
+[ext_resource type="Texture2D" uid="uid://bhtdfrs7iwaow" path="res://Asset/Art/UI/commonbar.png" id="1_c31jq"]
+
+[node name="PlayerUnitUI" type="Control" unique_id=1913141245]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HpProgressBar" type="TextureProgressBar" parent="." unique_id=1585870380]
+modulate = Color(1, 1, 1, 0.49411765)
+layout_mode = 0
+offset_left = -28.0
+offset_top = 22.0
+offset_right = 28.0
+offset_bottom = 25.0
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_c31jq")
+texture_progress = ExtResource("1_c31jq")
+tint_under = Color(0, 0, 0, 1)
+tint_progress = Color(1, 0.3019608, 0.30980393, 1)
+
+[node name="PlayerName" type="RichTextLabel" parent="." unique_id=63940602]
+layout_mode = 0
+offset_left = -30.0
+offset_top = 24.0
+offset_right = 30.0
+offset_bottom = 37.0
+theme_override_font_sizes/normal_font_size = 8
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1

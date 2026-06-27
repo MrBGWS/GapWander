@@ -2,8 +2,7 @@ class_name PlayerUnit
 
 extends UnitBase
 
-var input_vector:Vector2
-@onready var body_sprite:AnimatedSprite2D = $BodyShow
+#@onready var body_sprite:AnimatedSprite2D = $BodyShow
 ##箭头输入处理类
 #var arrowInputHandler:InputArrowHandler = InputArrowHandler.new()
 var dirList:Array[int]
@@ -16,6 +15,9 @@ var mainTargetUnit:UnitBase:
 
 func _ready() -> void:
     super._ready()
+    
+    #TODO 网络没加入之前先这样
+    GameManager.playerUnit = self
 
     turnAction = func(): handlerArrowInput()
 
@@ -66,8 +68,6 @@ func Attack(targetUnit:UnitBase):
 func TakeDamage(damage, damageSource = 0,damageType = 0):
     super.TakeDamage(damage, damageSource, damageType)
 
-
-@onready var NameLabel:RichTextLabel = $PlayerName
 ##设置玩家信息
 func SetPlayerData(playData:PlayerInfoData):
     NameLabel.text = playData.name
