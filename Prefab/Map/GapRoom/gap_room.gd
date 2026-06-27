@@ -9,3 +9,4 @@ func _ready() -> void:
 func StartGame():
     print("游戏开始")
     #TODO 去下一个场景
+    
