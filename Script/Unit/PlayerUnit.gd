@@ -18,6 +18,8 @@ func _ready() -> void:
     
     #TODO 网络没加入之前先这样
     GameManager.playerUnit = self
+    await get_tree().process_frame
+    GameManager.eventBus.set_main_camera_to.emit(self)
 
     turnAction = func(): handlerArrowInput()
 

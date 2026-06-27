@@ -6,6 +6,7 @@ extends Node2D
 # 输入的运动方向，可能是玩家输入也可能是脚本输入，一视同仁
 var input_vector:Vector2
 #var AttendPackedScene = preload("res://Prefab/Unit/attend_show.tscn")
+@onready var unitRender = $Render
 @onready var bodySprite = $Render/Body
 @onready var hitParticles = $Render/HitParticles
 @onready var HpProgressBar = $PlayerUnitUI/HpProgressBar
@@ -106,12 +107,12 @@ func _process_movement(delta: float) -> void:
 
 ## 根据移动方向翻转精灵
 func _update_sprite_facing(direction: Vector2) -> void:
-    if bodySprite == null:
+    if unitRender == null:
         return
     if direction.x < -0.01:
-        bodySprite.scale.x = -abs(bodySprite.scale.x)  # 面向左
+        unitRender.scale.x = -abs(unitRender.scale.x)  # 面向左
     elif direction.x > 0.01:
-        bodySprite.scale.x = abs(bodySprite.scale.x)    # 面向右
+        unitRender.scale.x = abs(unitRender.scale.x)    # 面向右
     # 水平分量极小（纯上下移动）时保持当前朝向
 
 func TurnStart():

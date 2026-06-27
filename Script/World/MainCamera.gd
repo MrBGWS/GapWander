@@ -1,9 +1,10 @@
 class_name M_Camera
-extends Camera2D
+extends Node2D
 
 @export var followTarget:Node2D
 @onready var UIAudioPlayer:AudioStreamPlayer2D = $UIAudioPlayer
 @onready var BgmPlayer:AudioStreamPlayer2D = $BgmPlayer
+@onready var phantomCamera:PhantomCamera2D = $PhantomCamera2D
 
 var UIAudioPlayerPool:Array[AudioStreamPlayer2D] = []
 
@@ -16,12 +17,13 @@ func _ready() -> void:
 
 func set_main_camera_to(node:Node2D, keep_global_transform = false):
     print("set_main_camera_to  ", node.name)
-    followTarget = node
     #self.reparent.call_deferred(node, keep_global_transform)
+    phantomCamera.follow_target = node
 
 func _process(delta: float) -> void:
-    if followTarget != null:
-        self.position = followTarget.position
+    pass
+    #if followTarget != null:
+        #self.position = followTarget.position
 
 func shake(strength: float, duration: float = 0.3):
     var tween = create_tween()
@@ -30,7 +32,7 @@ func shake(strength: float, duration: float = 0.3):
 
 func _apply_shake(amp: float):
     # 随机生成偏移量模拟震动
-    offset = Vector2(
+    phantomCamera.follow_offset = Vector2(
         randf_range(-amp, amp),
         randf_range(-amp, amp)
     )

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bwg10fpmere00"]
+
+[ext_resource type="Script" uid="uid://b7c24arttnhpq" path="res://Prefab/MapThing/place_of_interest.gd" id="1_nj2y8"]
+[ext_resource type="Texture2D" uid="uid://b77ayaarql3rm" path="res://Asset/Art/Unit/undead_towerBase.png" id="2_8tpfb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ao50t"]
+size = Vector2(50, 26)
+
+[node name="PlaceOfInterest" type="Node2D" unique_id=584694207]
+script = ExtResource("1_nj2y8")
+
+[node name="PlaceShow" type="Sprite2D" parent="." unique_id=723484018]
+z_index = 1
+texture = ExtResource("2_8tpfb")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2062194886]
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=129509226]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_ao50t")

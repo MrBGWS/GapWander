@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://d30mqnfcv7hjs"]
+
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_7dc5j"]
+[ext_resource type="Script" uid="uid://bapfcj688mp33" path="res://Script/World/MainCamera.gd" id="1_r0bki"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_r0bki"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_nn4gs"]
+
+[sub_resource type="Resource" id="Resource_ejfeq"]
+script = ExtResource("3_nn4gs")
+
+[node name="PhatomCameraRoot" type="Node2D" unique_id=1127557992]
+script = ExtResource("1_r0bki")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=599576563]
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=33613034]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("1_7dc5j")
+
+[node name="PhantomCamera2D" type="Node2D" parent="." unique_id=600556721]
+top_level = true
+script = ExtResource("2_r0bki")
+follow_mode = 2
+snap_to_pixel = true
+tween_resource = SubResource("Resource_ejfeq")
+
+[node name="UIAudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=940687610]
+
+[node name="BgmPlayer" type="AudioStreamPlayer2D" parent="." unique_id=2042228061]
