@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://bel1fmm0f3s36"]
+
+[ext_resource type="Texture2D" uid="uid://b3i45h7dykemv" path="res://Asset/Art/Unit/Pig_grean_mushroom.png" id="1_577gt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ky5o"]
+atlas = ExtResource("1_577gt")
+region = Rect2(0, 0, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djmy6"]
+atlas = ExtResource("1_577gt")
+region = Rect2(60, 0, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pce00"]
+atlas = ExtResource("1_577gt")
+region = Rect2(120, 0, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjtxq"]
+atlas = ExtResource("1_577gt")
+region = Rect2(180, 0, 60, 48)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ky5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djmy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pce00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjtxq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://bwkliu0t64dg5"]
+
+[ext_resource type="Texture2D" uid="uid://cpt1ssq0q7qq" path="res://Asset/Art/Unit/lightsprite.png" id="1_7vdfn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t70el"]
+atlas = ExtResource("1_7vdfn")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnehn"]
+atlas = ExtResource("1_7vdfn")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78sx6"]
+atlas = ExtResource("1_7vdfn")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ai3pg"]
+atlas = ExtResource("1_7vdfn")
+region = Rect2(144, 0, 48, 48)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t70el")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnehn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78sx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ai3pg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

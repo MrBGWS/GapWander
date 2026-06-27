@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cvtdw7tr4ebxj"]
+
+[ext_resource type="FontFile" uid="uid://bh48n5yjyra6q" path="res://Asset/Front/LanaPixel.ttf" id="1_dl37d"]
+
+[resource]
+Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("1_dl37d")
+RichTextLabel/font_sizes/bold_font_size = 56
+RichTextLabel/font_sizes/bold_italics_font_size = 56
+RichTextLabel/font_sizes/italics_font_size = 36
+RichTextLabel/font_sizes/mono_font_size = 36
+RichTextLabel/font_sizes/normal_font_size = 48
+RichTextLabel/fonts/bold_font = ExtResource("1_dl37d")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_dl37d")
+RichTextLabel/fonts/italics_font = ExtResource("1_dl37d")
+RichTextLabel/fonts/mono_font = ExtResource("1_dl37d")
+RichTextLabel/fonts/normal_font = ExtResource("1_dl37d")

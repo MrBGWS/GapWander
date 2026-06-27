@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dstsdgrdwh06p"]
+
+[ext_resource type="Texture2D" uid="uid://dxweilg4ne6cs" path="res://Asset/Art/Unit/undeadCore.png" id="1_1uf46"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiaxc"]
+atlas = ExtResource("1_1uf46")
+region = Rect2(0, 0, 57, 48)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fiaxc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://b6fn1bpo64kat"]
+
+[ext_resource type="Texture2D" uid="uid://beecyjsc6ipho" path="res://Asset/Art/Unit/fishman_normal.png" id="1_7vl6g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp71x"]
+atlas = ExtResource("1_7vl6g")
+region = Rect2(0, 0, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqh76"]
+atlas = ExtResource("1_7vl6g")
+region = Rect2(60, 0, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ar8o7"]
+atlas = ExtResource("1_7vl6g")
+region = Rect2(120, 0, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgbo3"]
+atlas = ExtResource("1_7vl6g")
+region = Rect2(180, 0, 60, 48)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp71x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqh76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ar8o7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgbo3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

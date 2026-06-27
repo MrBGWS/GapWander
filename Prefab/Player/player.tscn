@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ccy2lr6672cjx"]
+
+[ext_resource type="SpriteFrames" uid="uid://dd84moekrfw08" path="res://Asset/Animation/SpriteFrames/anim_littlenight.tres" id="1_71csl"]
+[ext_resource type="Texture2D" uid="uid://b5fr75pavqyi2" path="res://Asset/Art/weapon/sword.png" id="2_o1eh6"]
+
+[node name="Player" type="Node2D" unique_id=688343418]
+
+[node name="Body" type="AnimatedSprite2D" parent="." unique_id=1568599467]
+sprite_frames = ExtResource("1_71csl")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Weapon" type="Sprite2D" parent="." unique_id=979399754]
+position = Vector2(-20, -2)
+texture = ExtResource("2_o1eh6")

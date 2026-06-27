@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://tjgmuwv7k6b2"]
+
+[ext_resource type="Texture2D" uid="uid://ctrs2tixvexi8" path="res://Asset/Art/Unit/Wood_grean_mushroom.png" id="1_78dmb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ytao"]
+atlas = ExtResource("1_78dmb")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0648"]
+atlas = ExtResource("1_78dmb")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntdo2"]
+atlas = ExtResource("1_78dmb")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eap6g"]
+atlas = ExtResource("1_78dmb")
+region = Rect2(144, 0, 48, 48)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ytao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0648")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntdo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eap6g")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

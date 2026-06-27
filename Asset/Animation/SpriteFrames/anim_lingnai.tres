@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://b25y2dowo1o7y"]
+
+[ext_resource type="Texture2D" uid="uid://b522vqeape2jt" path="res://Asset/Art/Unit/lingnai.png" id="1_6axx7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj5l4"]
+atlas = ExtResource("1_6axx7")
+region = Rect2(0, 0, 48, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs81v"]
+atlas = ExtResource("1_6axx7")
+region = Rect2(48, 0, 48, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oc3d"]
+atlas = ExtResource("1_6axx7")
+region = Rect2(96, 0, 48, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77k10"]
+atlas = ExtResource("1_6axx7")
+region = Rect2(144, 0, 48, 52)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj5l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs81v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oc3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77k10")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

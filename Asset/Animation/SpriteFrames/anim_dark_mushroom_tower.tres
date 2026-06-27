@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bq60donj67k16"]
+
+[ext_resource type="Texture2D" uid="uid://cphpbsll82nyo" path="res://Asset/Art/Unit/dark_mushroom_tower.png" id="1_qdb1k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y33m"]
+atlas = ExtResource("1_qdb1k")
+region = Rect2(0, 0, 80, 80)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2y33m")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

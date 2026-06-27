@@ -1,5 +1,12 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-/claude
+/Asset/Art
+/Asset/Sound
+/Prefab/UI/*.tmp
+/demo
+/godot_state_charts_examples
+/images
 /addons
+/.githooks
+/.claude

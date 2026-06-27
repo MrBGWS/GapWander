@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dd84moekrfw08"]
+
+[ext_resource type="Texture2D" uid="uid://0fso0vm5jjrg" path="res://Asset/Art/Role/LittleNight.png" id="1_51g10"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3by8"]
+atlas = ExtResource("1_51g10")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2lvh"]
+atlas = ExtResource("1_51g10")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngbns"]
+atlas = ExtResource("1_51g10")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2aub"]
+atlas = ExtResource("1_51g10")
+region = Rect2(144, 0, 48, 48)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3by8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2lvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngbns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2aub")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]

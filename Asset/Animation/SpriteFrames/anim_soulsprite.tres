@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dkhbvqod0w1qm"]
+
+[ext_resource type="Texture2D" uid="uid://dvctnp7penevb" path="res://Asset/Art/Environment/transport/transport_secondCore.png" id="1_wfrt2"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wfrt2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
