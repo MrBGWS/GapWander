@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
         "move_left", "move_right", 
         "move_up", "move_down"
     )
-    #var attack = Input.is_action_just_pressed("attack")
+    var attack = Input.is_action_just_pressed("attack")
     #var jump = Input.is_action_just_pressed("jump")
     var dodge = Input.is_action_just_pressed("dodge")
     #var short_skill = Input.is_action_just_pressed("short_skill")
@@ -54,6 +54,8 @@ func _physics_process(delta: float) -> void:
         
 
     if playerUnit != null:
+        if attack:
+            playerUnit.Attack()
         playerUnit.input_vector = input_vector
         if Input.is_action_just_pressed("ui_up"):
             playerInputArrow(1)
@@ -74,7 +76,7 @@ func playerInputArrow(dir:int):
         GameManager.eventBus.player_input_arrow.emit(dir)
 #region 持久化设置
 # 存档存储路径
-const ConfigPath = "user://HsPlayerData01.cfg"
+const ConfigPath = "user://gwPlayerData01.cfg"
 var PlayerConfig:ConfigFile = ConfigFile.new()
 
 # 从本地文件加载玩家数据
@@ -141,5 +143,6 @@ func ClearPlayerInfoList():
     PlayerInfoDic.clear()
     
 func ShowSelfPlayerInfoList():
-    print(multiplayer.get_unique_id()," ShowSelfPlayerInfoList ",PlayerInfoDic)
+    #print(multiplayer.get_unique_id()," ShowSelfPlayerInfoList ",PlayerInfoDic)
+    pass
 #endregion

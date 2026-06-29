@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cvnt8roa80q01" path="res://Asset/Art/Icon/hole.png" id="1_py2e7"]
 [ext_resource type="PackedScene" uid="uid://jmi6nmg7t4lv" path="res://Prefab/Map/WorldMap/Mushroom/map_room.tscn" id="2_seq1k"]
 [ext_resource type="PackedScene" uid="uid://ccy2lr6672cjx" path="res://Prefab/Player/player.tscn" id="3_hrxk3"]
+[ext_resource type="PackedScene" uid="uid://d30mqnfcv7hjs" path="res://Prefab/Camera/phatom_camera_root.tscn" id="5_git68"]
 
 [node name="WorldRoot" type="Node2D" unique_id=920007211]
 script = ExtResource("1_djqym")
@@ -18,3 +19,5 @@ texture = ExtResource("1_py2e7")
 [node name="MapRoom" parent="RoomRoot" unique_id=568639136 instance=ExtResource("2_seq1k")]
 
 [node name="Player" parent="." unique_id=688343418 instance=ExtResource("3_hrxk3")]
+
+[node name="PhatomCameraRoot" parent="." unique_id=1127557992 instance=ExtResource("5_git68")]

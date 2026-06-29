@@ -15,13 +15,19 @@ var mainTargetUnit:UnitBase:
 
 func _ready() -> void:
     super._ready()
-    
+
     #TODO 网络没加入之前先这样
     GameManager.playerUnit = self
     await get_tree().process_frame
     GameManager.eventBus.set_main_camera_to.emit(self)
 
     turnAction = func(): handlerArrowInput()
+
+
+func _process(delta: float) -> void:
+    super._process(delta)
+
+
 
 #func _input(event):
     #if event.is_action_pressed("ui_up"):
@@ -63,7 +69,7 @@ func handlerArrowInput():
     #没找到
     Shake()
     
-func Attack(targetUnit:UnitBase):
+func Attack(targetUnit:UnitBase = null):
     if targetUnit == null:
         targetUnit = mainTargetUnit
     super.Attack(targetUnit)

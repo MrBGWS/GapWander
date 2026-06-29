@@ -11,6 +11,9 @@ var input_vector:Vector2
 @onready var hitParticles = $Render/HitParticles
 @onready var HpProgressBar = $PlayerUnitUI/HpProgressBar
 @onready var NameLabel:RichTextLabel = $PlayerUnitUI/PlayerName
+@onready var animationTree:AnimationTree = $Render/AnimationTree
+@onready var animationPlayer:AnimationPlayer = $Render/AnimationPlayer
+#动画部分
 var turnAction:Callable
 var isTurnAcionFinish:bool = true
 
@@ -82,9 +85,37 @@ func _ready() -> void:
     var shader = preload("res://Asset/Shaders/Unit.gdshader")
     self.bodySprite.material = ShaderMaterial.new()
     self.bodySprite.material.shader = shader
+     
+    # 监听动画结束
+    if animationPlayer != null:
+        animationPlayer.animation_finished.connect(_on_animation_finished)
 
 func _process(delta: float) -> void:
     _process_movement(delta)
+    _update_animation_state()
+
+
+## 根据移动状态驱动 AnimationTree 的 move/idle 条件
+func _update_animation_state() -> void:
+    if animationTree == null:
+        return
+
+    var is_moving := input_vector != Vector2.ZERO and not is_jumping and not is_dodging
+
+    if is_moving:
+        animationTree.set("parameters/conditions/move", true)
+        animationTree.set("parameters/conditions/idle", false)
+    else:
+        animationTree.set("parameters/conditions/move", false)
+        animationTree.set("parameters/conditions/idle", true)
+
+
+## 攻击动画播放完毕后回到 idle
+func _on_animation_finished(anim_name: String) -> void:
+    if anim_name == "attack" and animationTree != null:
+        var playback = animationTree["parameters/playback"]
+        playback.travel("idle")
+        
 
 ## 处理基于 input_vector 的多向移动
 func _process_movement(delta: float) -> void:
@@ -136,15 +167,23 @@ func PrepareAttack(targetUnit:UnitBase):
     turnAction = func():
         Attack(targetUnit)
 
-func Attack(targetUnit:UnitBase):
-    if targetUnit == null :
-        return
-    #攻击需要一段提示时间才会生效
-    targetUnit.TakeDamage(AttackPower)
+func Attack(targetUnit:UnitBase = null):
+    
+    PlayAttackAnimation()
+    ##攻击需要一段提示时间才会生效
+    #targetUnit.TakeDamage(AttackPower)
+    
     #设置通知信息
-    var messageStr = AttackMSG.format({"attacker": data.UnitName,"target": targetUnit.data.UnitName,"damage": AttackPower})
+    var messageStr = AttackMSG.format({"attacker": data.UnitName,"damage": AttackPower})
     GameManager.eventBus.add_game_event_str.emit(messageStr)
-            
+
+## 播放攻击动画（根据当前状态选择正确的过渡条件）
+func PlayAttackAnimation() -> void:
+    if animationTree == null:
+        return
+
+    animationTree.set("parameters/conditions/attack", true)
+    
 #逻辑 拿到一个敌人单位的索引
 func GetOneEnemy() -> UnitBase:
     var allUnit = get_tree().get_nodes_in_group("unit")

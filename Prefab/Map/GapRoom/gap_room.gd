@@ -16,5 +16,5 @@ func _ready() -> void:
 func StartGame(eventID):
     if eventID == 1:
         print("游戏开始")
-        #TODO 去下一个场景
+        #去下一个场景
         SceneManager.change_scene(SceneChangeOption.scene, SceneChangeOption.GetFadeOutOption(), SceneChangeOption.GetFadeInOption(), SceneChangeOption.GetGeneralOption())
