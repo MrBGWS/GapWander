@@ -182,7 +182,8 @@ func PlayAttackAnimation() -> void:
     if animationTree == null:
         return
 
-    animationTree.set("parameters/conditions/attack", true)
+    var playback = animationTree["parameters/playback"]
+    playback.travel("attack")
     
 #逻辑 拿到一个敌人单位的索引
 func GetOneEnemy() -> UnitBase:

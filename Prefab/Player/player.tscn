@@ -161,7 +161,6 @@ shape = SubResource("RectangleShape2D_dlx0m")
 [node name="AnimationTree" type="AnimationTree" parent="Render" unique_id=1590144632]
 tree_root = ExtResource("5_uf4pe")
 anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/attack = false
 parameters/conditions/idle = false
 parameters/conditions/move = false
 
