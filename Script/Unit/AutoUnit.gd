@@ -13,9 +13,9 @@ func _ready() -> void:
     super._ready()
     
     SetStateChartValue()
-    PrepareNextTurnAction()
-    
-    GameManager.eventBus.turn_finish.connect(PrepareNextTurnAction)
+    #PrepareNextTurnAction()
+    #
+    #GameManager.eventBus.turn_finish.connect(PrepareNextTurnAction)
 
 func _process(delta: float) -> void:
     super._process(delta)
@@ -24,11 +24,11 @@ func _process(delta: float) -> void:
         coldDownCount = coldDown
         #ReadyToAttack()
 
-#决定下回合的动作
-func PrepareNextTurnAction():
-    var targetUnit = GetOneEnemy()
-    turnAction = func():
-        Attack(targetUnit)
+##决定下回合的动作
+#func PrepareNextTurnAction():
+    #var targetUnit = GetOneEnemy()
+    #turnAction = func():
+        #Attack(targetUnit)
 #func ReadyToAttack():
     ##攻击需要一段提示时间才会生效
     ##寻找一个目标进行攻击
