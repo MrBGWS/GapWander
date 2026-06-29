@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://clshab6d17rvs" path="res://Prefab/Map/GapRoom/gap_room.gd" id="1_p42v0"]
 [ext_resource type="Script" uid="uid://c4f4f60hxnkd0" path="res://Script/Setting/SceneChangeOptionSetting.gd" id="2_l1ed3"]
 [ext_resource type="TileSet" uid="uid://chyjah3f8yewn" path="res://Asset/Map/firstPlaceTileSet.tres" id="2_p42v0"]
-[ext_resource type="PackedScene" uid="uid://ccy2lr6672cjx" path="res://Prefab/Player/player.tscn" id="3_l1ed3"]
+[ext_resource type="PackedScene" uid="uid://ccy2lr6672cjx" path="res://Prefab/Unit/Player/player.tscn" id="3_l1ed3"]
 [ext_resource type="PackedScene" uid="uid://d30mqnfcv7hjs" path="res://Prefab/Camera/phatom_camera_root.tscn" id="4_b7ohq"]
 [ext_resource type="PackedScene" uid="uid://bwg10fpmere00" path="res://Prefab/MapThing/place_of_interest.tscn" id="5_mrkn7"]
 

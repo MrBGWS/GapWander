@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bg53dslpno8xi"]
+
+[ext_resource type="Script" uid="uid://c6ns10xytaiga" path="res://Prefab/Area/UnitArea/unit_area.gd" id="1_paw2e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlx0m"]
+size = Vector2(10, 17.666668)
+
+[node name="UnitArea" type="Area2D" unique_id=1230098625]
+collision_mask = 15
+script = ExtResource("1_paw2e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=375821813]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_dlx0m")

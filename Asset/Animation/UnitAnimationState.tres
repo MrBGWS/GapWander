@@ -24,17 +24,17 @@ advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vopsk"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kwyms"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3aocr"]
 switch_mode = 2
 advance_mode = 2
 
 [resource]
 states/Start/position = Vector2(186, 106)
 states/attack/node = SubResource("AnimationNodeAnimation_wktyc")
-states/attack/position = Vector2(701.55963, 102)
+states/attack/position = Vector2(696.55963, 116)
 states/idle/node = SubResource("AnimationNodeAnimation_qlvx1")
 states/idle/position = Vector2(530, 106)
 states/move/node = SubResource("AnimationNodeAnimation_ciekc")
 states/move/position = Vector2(530, 242)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_ciekc"), "idle", "move", SubResource("AnimationNodeStateMachineTransition_qlvx1"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_wktyc"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_uhya0"), "move", "attack", SubResource("AnimationNodeStateMachineTransition_vopsk"), "attack", "End", SubResource("AnimationNodeStateMachineTransition_kwyms")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_ciekc"), "idle", "move", SubResource("AnimationNodeStateMachineTransition_qlvx1"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_wktyc"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_uhya0"), "move", "attack", SubResource("AnimationNodeStateMachineTransition_vopsk"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_3aocr")]
 graph_offset = Vector2(-276.44037, 45.649807)

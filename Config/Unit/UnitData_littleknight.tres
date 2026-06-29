@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://b45rkr2q426o5"]
+
+[ext_resource type="Script" uid="uid://csxw1vx0n6ir4" path="res://Script/Data/UnitData.gd" id="1_2ehyr"]
+
+[resource]
+script = ExtResource("1_2ehyr")
+ID = 1
+UnitName = "LittleKight"
+HP = 50.0
+MaxHp = 50.0
+AttackPower = 5.0
+metadata/_custom_type_script = "uid://csxw1vx0n6ir4"

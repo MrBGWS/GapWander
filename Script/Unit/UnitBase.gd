@@ -13,6 +13,7 @@ var input_vector:Vector2
 @onready var NameLabel:RichTextLabel = $PlayerUnitUI/PlayerName
 @onready var animationTree:AnimationTree = $Render/AnimationTree
 @onready var animationPlayer:AnimationPlayer = $Render/AnimationPlayer
+@onready var unitArea:UnitArea = $Render/UnitArea
 #动画部分
 var turnAction:Callable
 var isTurnAcionFinish:bool = true
@@ -68,7 +69,7 @@ func _ready() -> void:
     if data == null:
         push_error("有单位初始数据为空！！")
         return
-    #自动归一化data
+    #自动唯一化data
     data = data.duplicate(true)
     GameManager.eventBus.turn_start.connect(TurnStart)
     GameManager.eventBus.turn_finish.connect(TurnFinish)
@@ -86,9 +87,17 @@ func _ready() -> void:
     self.bodySprite.material = ShaderMaterial.new()
     self.bodySprite.material.shader = shader
      
-    # 监听动画结束
+    # 停止 AnimationPlayer 自动播放，交给 AnimationTree 控制
     if animationPlayer != null:
-        animationPlayer.animation_finished.connect(_on_animation_finished)
+        animationPlayer.stop()
+        animationPlayer.autoplay = ""
+
+    if animationTree != null:
+        animationTree.anim_player = animationTree.get_path_to(animationPlayer)
+        animationTree.active = true
+        
+    #
+    unitArea.take_damage.connect(TakeDamage)
 
 func _process(delta: float) -> void:
     _process_movement(delta)
@@ -109,13 +118,6 @@ func _update_animation_state() -> void:
         animationTree.set("parameters/conditions/move", false)
         animationTree.set("parameters/conditions/idle", true)
 
-
-## 攻击动画播放完毕后回到 idle
-func _on_animation_finished(anim_name: String) -> void:
-    if anim_name == "attack" and animationTree != null:
-        var playback = animationTree["parameters/playback"]
-        playback.travel("idle")
-        
 
 ## 处理基于 input_vector 的多向移动
 func _process_movement(delta: float) -> void:
@@ -177,7 +179,7 @@ func Attack(targetUnit:UnitBase = null):
     var messageStr = AttackMSG.format({"attacker": data.UnitName,"damage": AttackPower})
     GameManager.eventBus.add_game_event_str.emit(messageStr)
 
-## 播放攻击动画（根据当前状态选择正确的过渡条件）
+## 播放攻击动画
 func PlayAttackAnimation() -> void:
     if animationTree == null:
         return

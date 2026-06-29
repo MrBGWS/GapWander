@@ -2,16 +2,13 @@
 
 [ext_resource type="SpriteFrames" uid="uid://dd84moekrfw08" path="res://Asset/Animation/SpriteFrames/anim_littlenight.tres" id="1_71csl"]
 [ext_resource type="Script" uid="uid://bx24g6pefoi6m" path="res://Script/Unit/PlayerUnit.gd" id="1_ed584"]
+[ext_resource type="Resource" uid="uid://b45rkr2q426o5" path="res://Config/Unit/UnitData_littleknight.tres" id="2_83a72"]
 [ext_resource type="Texture2D" uid="uid://b5fr75pavqyi2" path="res://Asset/Art/weapon/sword.png" id="2_o1eh6"]
+[ext_resource type="PackedScene" uid="uid://ddd1qqjuckpr0" path="res://Prefab/Area/DamageArea/damage_area.tscn" id="4_6wdec"]
 [ext_resource type="PackedScene" uid="uid://dd7wpp80spfr" path="res://Prefab/Particle/hit_particles.tscn" id="4_w6ttw"]
-[ext_resource type="PackedScene" uid="uid://bbp2urr1fkoyk" path="res://Prefab/Player/player_unit_ui.tscn" id="5_stuvd"]
+[ext_resource type="PackedScene" uid="uid://bg53dslpno8xi" path="res://Prefab/Area/UnitArea/unit_area.tscn" id="5_qac0y"]
+[ext_resource type="PackedScene" uid="uid://bbp2urr1fkoyk" path="res://Prefab/Unit/Player/player_unit_ui.tscn" id="5_stuvd"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://cqldcghh5fqt" path="res://Asset/Animation/UnitAnimationState.tres" id="5_uf4pe"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0t50"]
-size = Vector2(6, 24)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlx0m"]
-size = Vector2(10, 17.666668)
 
 [sub_resource type="Animation" id="Animation_1ubpg"]
 length = 0.001
@@ -105,7 +102,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.30053043, 0.65964806, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.03490658503988659, 0.026179938779914945, 0.0]
+"values": [0.0, 0.03490658503988659, 0.02617993877991494, 0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -117,7 +114,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.30053043, 0.65964806, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, -0.10995574287564296, 0.061086523819801536, 0.0]
+"values": [0.0, -0.10995574287564296, 0.06108652381980153, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5kbma"]
@@ -129,6 +126,7 @@ _data = {
 
 [node name="Player" type="Node2D" unique_id=688343418]
 script = ExtResource("1_ed584")
+data = ExtResource("2_83a72")
 
 [node name="Render" type="Node2D" parent="." unique_id=955818014]
 scale = Vector2(3, 3)
@@ -142,21 +140,11 @@ autoplay = "idle"
 position = Vector2(-20, -2)
 texture = ExtResource("2_o1eh6")
 
-[node name="Area2D" type="Area2D" parent="Render/Weapon" unique_id=668957787]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Render/Weapon/Area2D" unique_id=338828496]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_t0t50")
+[node name="DamageArea" parent="Render/Weapon" unique_id=491928187 instance=ExtResource("4_6wdec")]
 
 [node name="HitParticles" parent="Render" unique_id=1931794354 instance=ExtResource("4_w6ttw")]
 
-[node name="Area2D" type="Area2D" parent="Render" unique_id=1427734278]
-collision_mask = 15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Render/Area2D" unique_id=2112383052]
-position = Vector2(0, 5.5)
-shape = SubResource("RectangleShape2D_dlx0m")
+[node name="UnitArea" parent="Render" unique_id=1230098625 instance=ExtResource("5_qac0y")]
 
 [node name="AnimationTree" type="AnimationTree" parent="Render" unique_id=1590144632]
 tree_root = ExtResource("5_uf4pe")

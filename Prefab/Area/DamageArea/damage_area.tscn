@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ddd1qqjuckpr0"]
+
+[ext_resource type="Script" uid="uid://bug0o2dluqdfk" path="res://Prefab/Area/DamageArea/damage_area.gd" id="1_youxx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0t50"]
+size = Vector2(6, 24)
+
+[node name="DamageArea" type="Area2D" unique_id=491928187]
+collision_layer = 4
+script = ExtResource("1_youxx")
+teamID = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1262589086]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_t0t50")

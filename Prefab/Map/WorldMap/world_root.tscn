@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://rai0fxie8p6" path="res://Prefab/Map/WorldMap/world_root.gd" id="1_djqym"]
 [ext_resource type="Texture2D" uid="uid://cvnt8roa80q01" path="res://Asset/Art/Icon/hole.png" id="1_py2e7"]
 [ext_resource type="PackedScene" uid="uid://jmi6nmg7t4lv" path="res://Prefab/Map/WorldMap/Mushroom/map_room.tscn" id="2_seq1k"]
-[ext_resource type="PackedScene" uid="uid://ccy2lr6672cjx" path="res://Prefab/Player/player.tscn" id="3_hrxk3"]
+[ext_resource type="PackedScene" uid="uid://ccy2lr6672cjx" path="res://Prefab/Unit/Player/player.tscn" id="3_hrxk3"]
 [ext_resource type="PackedScene" uid="uid://d30mqnfcv7hjs" path="res://Prefab/Camera/phatom_camera_root.tscn" id="5_git68"]
 
 [node name="WorldRoot" type="Node2D" unique_id=920007211]
