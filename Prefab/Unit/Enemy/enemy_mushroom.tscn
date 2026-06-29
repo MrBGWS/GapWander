@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://dibjbvorksjxg"]
+
+[ext_resource type="Script" uid="uid://ddgucaka2vblq" path="res://Script/Unit/AutoUnit.gd" id="1_2n2j8"]
+[ext_resource type="SpriteFrames" uid="uid://dccxe2gal2lpp" path="res://Asset/Animation/SpriteFrames/anim_dark_mushroom.tres" id="2_2n2j8"]
+[ext_resource type="Resource" uid="uid://brm5nu17mhw12" path="res://Config/Unit/UnitData_blackmushroom.tres" id="2_aiyyb"]
+[ext_resource type="Texture2D" uid="uid://b5fr75pavqyi2" path="res://Asset/Art/weapon/sword.png" id="4_cdiju"]
+[ext_resource type="PackedScene" uid="uid://ddd1qqjuckpr0" path="res://Prefab/Area/DamageArea/damage_area.tscn" id="5_47v7x"]
+[ext_resource type="PackedScene" uid="uid://dd7wpp80spfr" path="res://Prefab/Particle/hit_particles.tscn" id="6_myw10"]
+[ext_resource type="PackedScene" uid="uid://bg53dslpno8xi" path="res://Prefab/Area/UnitArea/unit_area.tscn" id="7_6ryc8"]
+[ext_resource type="AnimationNodeStateMachine" uid="uid://cqldcghh5fqt" path="res://Asset/Animation/UnitAnimationState.tres" id="8_awt7n"]
+[ext_resource type="PackedScene" uid="uid://bbp2urr1fkoyk" path="res://Prefab/Unit/Player/player_unit_ui.tscn" id="9_sd8cy"]
+[ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="10_c4pww"]
+[ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="11_aiyyb"]
+[ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="12_tww42"]
+
+[sub_resource type="Animation" id="Animation_1ubpg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-20, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Weapon:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_wbu25"]
+resource_name = "sword_attack"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.3, 0.36666664, 0.46666667, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-15.6, -2), Vector2(-10.333333, -9.666667), Vector2(6.3333316, -18.66667), Vector2(8.666666, -20.666668), Vector2(21, -7.666667), Vector2(18.743, 19.333), Vector2(-15.6, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.3, 0.36666664, 0.46666667, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.15364476, -0.4241150082346223, 0.03141592653589813, 1.0192626, 2.4696408915719763, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_stuvd"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.30053043, 0.65964806, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-15.6, -2), Vector2(-17.245, -1.52), Vector2(-15.13, -2.71), Vector2(-15.6, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.30053043, 0.65964806, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.03490658503988659, 0.02617993877991494, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Weapon:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.30053043, 0.65964806, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.10995574287564296, 0.06108652381980153, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5kbma"]
+_data = {
+&"RESET": SubResource("Animation_1ubpg"),
+&"attack": SubResource("Animation_wbu25"),
+&"idle": SubResource("Animation_stuvd")
+}
+
+[node name="Enemy_Moushroom" type="Node2D" unique_id=688343418]
+script = ExtResource("1_2n2j8")
+data = ExtResource("2_aiyyb")
+
+[node name="Render" type="Node2D" parent="." unique_id=955818014]
+scale = Vector2(3, 3)
+
+[node name="Body" type="AnimatedSprite2D" parent="Render" unique_id=1568599467]
+sprite_frames = ExtResource("2_2n2j8")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Weapon" type="Sprite2D" parent="Render" unique_id=979399754]
+position = Vector2(-20, -2)
+texture = ExtResource("4_cdiju")
+
+[node name="DamageArea" parent="Render/Weapon" unique_id=491928187 instance=ExtResource("5_47v7x")]
+
+[node name="HitParticles" parent="Render" unique_id=1931794354 instance=ExtResource("6_myw10")]
+
+[node name="UnitArea" parent="Render" unique_id=1230098625 instance=ExtResource("7_6ryc8")]
+
+[node name="AnimationTree" type="AnimationTree" parent="Render" unique_id=1590144632]
+tree_root = ExtResource("8_awt7n")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/idle = false
+parameters/conditions/move = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Render" unique_id=339645816]
+libraries/ = SubResource("AnimationLibrary_5kbma")
+autoplay = &"idle"
+
+[node name="PlayerUnitUI" parent="." unique_id=1913141245 instance=ExtResource("9_sd8cy")]
+offset_top = 43.0
+offset_bottom = 83.0
+
+[node name="StateChart" type="Node" parent="." unique_id=247888513]
+script = ExtResource("10_c4pww")
+metadata/_custom_type_script = "uid://couw105c3bde4"
+
+[node name="CompoundState" type="Node" parent="StateChart" unique_id=246683036]
+script = ExtResource("11_aiyyb")
+initial_state = NodePath("AtomicState")
+
+[node name="AtomicState" type="Node" parent="StateChart/CompoundState" unique_id=891019596]
+script = ExtResource("12_tww42")
+
+[node name="AtomicState2" type="Node" parent="StateChart/CompoundState" unique_id=1671620848]
+script = ExtResource("12_tww42")

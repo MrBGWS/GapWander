@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://brm5nu17mhw12"]
+
+[ext_resource type="Script" uid="uid://csxw1vx0n6ir4" path="res://Script/Data/UnitData.gd" id="1_7j4s6"]
+
+[resource]
+script = ExtResource("1_7j4s6")
+ID = 1001
+UnitName = "黑蘑菇体"
+HP = 20.0
+MaxHp = 20.0
+AttackPower = 7.0
+Speed = 150.0
+team = 2
+metadata/_custom_type_script = "uid://csxw1vx0n6ir4"

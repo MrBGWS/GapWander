@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ccy2lr6672cjx" path="res://Prefab/Unit/Player/player.tscn" id="3_l1ed3"]
 [ext_resource type="PackedScene" uid="uid://d30mqnfcv7hjs" path="res://Prefab/Camera/phatom_camera_root.tscn" id="4_b7ohq"]
 [ext_resource type="PackedScene" uid="uid://bwg10fpmere00" path="res://Prefab/MapThing/place_of_interest.tscn" id="5_mrkn7"]
+[ext_resource type="PackedScene" uid="uid://dibjbvorksjxg" path="res://Prefab/Unit/Enemy/enemy_mushroom.tscn" id="8_b7ohq"]
 
 [sub_resource type="Resource" id="Resource_wbfm6"]
 script = ExtResource("2_l1ed3")
@@ -33,3 +34,6 @@ position = Vector2(508, 283)
 
 [node name="PlaceOfInterest" parent="." unique_id=584694207 instance=ExtResource("5_mrkn7")]
 eventID = 1
+
+[node name="Enemy" parent="." unique_id=1487884540 instance=ExtResource("8_b7ohq")]
+position = Vector2(470, -12)

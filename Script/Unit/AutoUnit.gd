@@ -40,7 +40,7 @@ func PrepareNextTurnAction():
     #Attack(targetUnit)
     
 
-func Attack(targetUnit:UnitBase):
+func Attack(targetUnit:UnitBase = null):
     super.Attack(targetUnit)
     
     

@@ -23,7 +23,6 @@ var current_move_speed: float:
     get:
         return data.Speed
 
-@export var team:int = 1
 var Hp:float:
     get:
         return data.HP
@@ -56,6 +55,11 @@ var SkillIDList:Array[int]:
         return data.SkillIDList
     set(value):
         data.SkillIDList = value
+var team:int:
+    get:
+        return data.team
+    set(value):
+        data.team = value
 
 ##技能列表
 var SkillList:Array[SkillBase] = []
