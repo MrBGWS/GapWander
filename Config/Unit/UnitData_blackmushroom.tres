@@ -11,4 +11,6 @@ MaxHp = 20.0
 AttackPower = 7.0
 Speed = 150.0
 team = 2
+radiusEyeSight = 200.0
+radiusAttack = 50
 metadata/_custom_type_script = "uid://csxw1vx0n6ir4"

@@ -127,7 +127,7 @@ _data = {
 &"idle": SubResource("Animation_stuvd")
 }
 
-[node name="Enemy_Moushroom" type="Node2D" unique_id=688343418]
+[node name="Enemy_Moushroom" type="Node2D" unique_id=688343418 groups=["unit"]]
 script = ExtResource("1_2n2j8")
 data = ExtResource("2_aiyyb")
 
