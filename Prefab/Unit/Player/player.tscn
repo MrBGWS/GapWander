@@ -212,6 +212,6 @@ autoplay = &"idle"
 offset_top = 43.0
 offset_bottom = 83.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1165384136]
+[node name="BodyColl2D" type="CollisionShape2D" parent="." unique_id=1165384136]
 position = Vector2(1, 50)
 shape = SubResource("RectangleShape2D_dlx0m")

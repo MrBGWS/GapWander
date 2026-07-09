@@ -1,6 +1,6 @@
 class_name UnitBase
 
-extends Node2D
+extends RigidBody2D
 #单位数据
 @export var data:UnitData = UnitData.new()
 # 输入的运动方向，可能是玩家输入也可能是脚本输入，一视同仁
@@ -137,7 +137,8 @@ func _process_movement(delta: float) -> void:
     var direction: Vector2 = input_vector.normalized()
 
     # 应用移动
-    position += direction * current_move_speed * delta
+    #position += direction * current_move_speed * delta
+    move_and_collide(direction * current_move_speed * delta)
 
     # 根据水平方向翻转精灵（左负右正）
     _update_sprite_facing(direction)

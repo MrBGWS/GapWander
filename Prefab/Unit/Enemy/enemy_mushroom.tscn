@@ -127,7 +127,11 @@ _data = {
 &"idle": SubResource("Animation_stuvd")
 }
 
-[node name="Enemy_Moushroom" type="Node2D" unique_id=688343418 groups=["unit"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aiyyb"]
+
+[node name="Enemy_Moushroom" type="RigidBody2D" unique_id=702924108 groups=["unit"]]
+collision_mask = 3
+gravity_scale = 0.0
 script = ExtResource("1_2n2j8")
 data = ExtResource("2_aiyyb")
 
@@ -176,3 +180,7 @@ script = ExtResource("12_tww42")
 
 [node name="AtomicState2" type="Node" parent="StateChart/CompoundState" unique_id=1671620848]
 script = ExtResource("12_tww42")
+
+[node name="BodyColl2D" type="CollisionShape2D" parent="." unique_id=649836769]
+position = Vector2(1, 50)
+shape = SubResource("RectangleShape2D_aiyyb")
