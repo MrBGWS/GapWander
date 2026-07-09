@@ -9,4 +9,5 @@ UnitName = "LittleKight"
 HP = 50.0
 MaxHp = 50.0
 AttackPower = 5.0
+Speed = 400.0
 metadata/_custom_type_script = "uid://csxw1vx0n6ir4"

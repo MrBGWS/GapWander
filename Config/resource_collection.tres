@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="ResourceCollection" format=3 uid="uid://cf7u4o43b2pcu"]
 
-[ext_resource type="Script" uid="uid://d12mxss2orm53" path="res://Config/Resource_Collection.gd" id="1_gnbth"]
-[ext_resource type="Resource" uid="uid://chs1yely2yvfg" path="res://Config/Sound/SoundRes.tres" id="2_yg00d"]
+[ext_resource type="Script" uid="uid://d12mxss2orm53" path="res://Config/Resource_Collection.gd" id="1_a5ocd"]
+[ext_resource type="Resource" uid="uid://chs1yely2yvfg" path="res://Config/Sound/SoundRes.tres" id="2_a6f1c"]
+[ext_resource type="Resource" uid="uid://brm5nu17mhw12" path="res://Config/Unit/UnitData_blackmushroom.tres" id="3_26gk4"]
+[ext_resource type="Resource" uid="uid://b45rkr2q426o5" path="res://Config/Unit/UnitData_littleknight.tres" id="4_66bpb"]
 
 [resource]
-script = ExtResource("1_gnbth")
-tres_resources = Array[Resource]([ExtResource("2_yg00d")])
+script = ExtResource("1_a5ocd")
+tres_resources = Array[Resource]([ExtResource("2_a6f1c"), ExtResource("3_26gk4"), ExtResource("4_66bpb")])
