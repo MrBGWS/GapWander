@@ -7,6 +7,7 @@
 size = Vector2(3428, 2315)
 
 [node name="MoonDisaster" type="Node2D" unique_id=1804281846]
+visible = false
 script = ExtResource("1_qtb8c")
 
 [node name="TempPicture" type="Sprite2D" parent="." unique_id=1343945270]
