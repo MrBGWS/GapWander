@@ -38,7 +38,8 @@ position = Vector2(508, 283)
 
 [node name="PhatomCameraRoot" parent="." unique_id=134768700 instance=ExtResource("4_b7ohq")]
 
-[node name="PlaceOfInterest" parent="." unique_id=584694207 instance=ExtResource("5_mrkn7")]
+[node name="StartPort" parent="." unique_id=584694207 instance=ExtResource("5_mrkn7")]
+scale = Vector2(4, 4)
 eventID = 1
 
 [node name="Enemy" parent="." unique_id=1487884540 instance=ExtResource("8_b7ohq")]

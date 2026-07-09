@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://5xn167b2pm5m"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://5xn167b2pm5m"]
 
 [ext_resource type="Texture2D" uid="uid://diw1xg4reijtq" path="res://Asset/Art/Unit/elanmore.png" id="1_3hj7n"]
 
@@ -33,7 +33,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_acmr4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }]

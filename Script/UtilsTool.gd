@@ -71,7 +71,7 @@ static func get_clock_format_by_second(seconds:int):
     var secs:int= int(seconds) % 60
     return "%02d:%02d:%02d" % [hours, minutes, secs]
 
-#得到项目设置的输入动作对应的按键名
+##得到项目设置的输入动作对应的按键名
 static func get_action_name(action_name: String) -> String:
     var key_name = ""
     # 遍历该动作的所有输入事件
@@ -140,4 +140,5 @@ static func is_dic_all_null(dic:Dictionary):
         if dic[index] != null:
             res = false
     return res
+
 #endregion

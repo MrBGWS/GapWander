@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bkxpprj3qmvnl"]
+
+[ext_resource type="Script" uid="uid://cg6g247h564i3" path="res://Prefab/Map/WorldMap/Portal/npc_area.gd" id="1_6c5sh"]
+[ext_resource type="Texture2D" uid="uid://sm3v7hrfdu23" path="res://Asset/Art/UI/NPCWaitToTalk.png" id="1_web3h"]
+[ext_resource type="SpriteFrames" uid="uid://5xn167b2pm5m" path="res://Asset/Animation/SpriteFrames/anim_elanmore.tres" id="3_afutu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4xa1"]
+atlas = ExtResource("1_web3h")
+region = Rect2(0, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glx6u"]
+atlas = ExtResource("1_web3h")
+region = Rect2(48, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ar1qd"]
+atlas = ExtResource("1_web3h")
+region = Rect2(96, 0, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pl5hs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4xa1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glx6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ar1qd")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_itnuk"]
+size = Vector2(29, 44)
+
+[node name="NpcArea" type="Area2D" unique_id=1324838034]
+script = ExtResource("1_6c5sh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1619260949]
+visible = false
+self_modulate = Color(0.65834, 0.65834, 0.65834, 1)
+light_mask = 0
+position = Vector2(0, -22)
+sprite_frames = SubResource("SpriteFrames_pl5hs")
+autoplay = "default"
+frame_progress = 0.746252
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=952052941]
+position = Vector2(0.5, 4)
+shape = SubResource("RectangleShape2D_itnuk")
+
+[node name="NpcBody" type="AnimatedSprite2D" parent="." unique_id=1548711921]
+sprite_frames = ExtResource("3_afutu")
+animation = &"idle"
+autoplay = "idle"

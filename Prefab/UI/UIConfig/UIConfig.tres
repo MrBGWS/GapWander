@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://e10c6gdm16md" path="res://Script/UI/UIconfig.gd" id="1_ub1wn"]
 [ext_resource type="PackedScene" uid="uid://dgo8vga7n7dkl" path="res://Prefab/UI/SettingUI/setting_ui.tscn" id="2_2gmy0"]
+[ext_resource type="PackedScene" uid="uid://5eupbhq67guj" path="res://Prefab/UI/ShowMsgUI/pop_msg_ui.tscn" id="3_wt1hd"]
 [ext_resource type="PackedScene" uid="uid://do1xpnbxchpwd" path="res://Prefab/UI/ActionRecordUI/actionRecord_ui.tscn" id="4_b2jde"]
 
 [resource]
 script = ExtResource("1_ub1wn")
 UIDic = Dictionary[int, PackedScene]({
+1: ExtResource("3_wt1hd"),
 2: ExtResource("2_2gmy0"),
 3: ExtResource("4_b2jde")
 })
