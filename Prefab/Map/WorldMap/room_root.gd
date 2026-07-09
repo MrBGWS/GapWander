@@ -12,6 +12,8 @@ var maproomList:Array[MapRoom] = []
 #房间默认尺寸（当无法从TileMap获取时使用）
 @export var default_room_size: Vector2 = Vector2(256, 256)
 
+##房间初始化结束
+signal room_init_finish
 
 func _ready() -> void:
     init_room()
@@ -53,6 +55,7 @@ func init_room():
     #清除所有房间中没能联通的传送门
     remove_unuse_protal()
     
+    room_init_finish.emit()
     print("房间初始化完成：%dx%d 网格，房间尺寸 %s" % [grid_width, grid_height, room_size])
     
 ##清除所有房间中没能联通的传送门

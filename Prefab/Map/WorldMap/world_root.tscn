@@ -10,6 +10,12 @@
 
 [node name="WorldRoot" type="Node2D" unique_id=920007211]
 script = ExtResource("1_djqym")
+day_duration = null
+shrink_duration = null
+stable_duration = null
+total_days = null
+circle_damage_percent = null
+first_shrink_safe_distance = null
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1493006839]
 z_index = -10
