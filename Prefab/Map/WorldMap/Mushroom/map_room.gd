@@ -2,11 +2,13 @@
 class_name MapRoom
 extends Node2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-    pass # Replace with function body.
+##该房间的逻辑位置
+var roomOffset:Vector2i
 
+##拥有的传送门列表
+var protalList:Array = []
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-    pass
+##移除一个传送门
+func RemoveOneProtal(protal:Protal):
+    protalList.remove_at(protalList.find(protal))
+    protal.queue_free()

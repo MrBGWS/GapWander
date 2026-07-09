@@ -50,7 +50,8 @@ emission_point_count = 136
 radial_velocity_min = 0.999978
 radial_velocity_max = 2.99998
 gravity = Vector3(0, 0.5, 0)
-scale_min = 0.2
+scale_min = 1.5
+scale_max = 2.5
 color = Color(0.09, 1, 1, 0.87451)
 alpha_curve = SubResource("CurveTexture_vxqtv")
 
@@ -59,6 +60,7 @@ size = Vector2(132, 132)
 
 [node name="Transport" type="Node2D" unique_id=308459444]
 modulate = Color(1, 1, 1, 0.392157)
+scale = Vector2(2, 2)
 script = ExtResource("1_nqi55")
 intensity_curve = ExtResource("2_qjvis")
 
@@ -85,10 +87,11 @@ speed_scale = 1.72
 process_material = SubResource("ParticleProcessMaterial_xe81f")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=155972469]
-color = Color(0.646716, 0.803731, 0.984158, 1)
-energy = 1.26
+color = Color(0.6468, 0.80229336, 0.98, 0.45882353)
+range_item_cull_mask = 3
 shadow_enabled = true
 texture = ExtResource("7_mmxrn")
+texture_scale = 2.06
 height = 5.0
 
 [node name="CheakArea" type="Area2D" parent="." unique_id=1567734645]

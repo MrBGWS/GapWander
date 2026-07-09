@@ -1,5 +1,15 @@
 #传送门
+class_name Protal
 extends Node2D
+##该传送门id
+@export var protalID:int = 1
+##指向的房间的相对位置
+@export var targetOffset:Vector2i = Vector2i(1, 0)
+##对应的目标房间的传送门id
+@export var targetProtalID:int = 1
+##所属房间
+var room:MapRoom
+
 @onready var SecondCore = $BackGround/SecondCore
 @onready var TransportCore = $BackGround/TransportCore
 @onready var Ring1 = $BackGround/ring1
@@ -17,7 +27,7 @@ var rotationSpeed:float = 0.4
 
 #传送检查
 @onready var checkArea = $CheakArea
-@export var toSceneName:String = "res://Scene/map/elan.tscn"
+
 var canInteract = false
 
 @export var isHide = false
@@ -34,6 +44,15 @@ func _ready() -> void:
     if isHide:
         visible = false
         modulate.a = 0
+        
+    #向房间注册自己
+    var parent = get_parent()
+    if parent is MapRoom:
+        parent.protalList.append(self)
+        room = parent
+    else:
+        print("有传送门在房间外！")
+    
 # 当有物体进入区域时
 func _on_body_entered(object):
     var body = object as UnitBase
@@ -45,7 +64,7 @@ func _on_body_entered(object):
         return
     #for item in body.data.inventory:
         #if item.id == 0:
-    GameManager.eventBus.show_msg.emit("(按下" + UtilsTool.get_action_name("interact") + "键交互)")
+    GameManager.eventBus.show_msg.emit("按下" + UtilsTool.get_action_name("interact") + "键交互")
     canInteract = true
     if isHide:
         show_hide(true)
@@ -70,9 +89,10 @@ func _on_body_exited(object):
         curUnit = null
 func _process(delta: float) -> void:
     if canInteract and Input.is_action_just_pressed("interact"):
-        print("变化场景")
-        #变化场景
-        GameManager.change_scene(toSceneName)
+        print("进入 ... 房间")
+        #把主控单位移入目标房间变化场景
+        if room != null:
+            GameManager.eventBus.change_world_room.emit(room.roomOffset + targetOffset, targetProtalID)
     if not intensity_curve or light == null:
         return
     

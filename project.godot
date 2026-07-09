@@ -150,6 +150,8 @@ EnterPress={
 
 [layer_names]
 
+2d_render/layer_1="地板"
+2d_render/layer_2="竖着的"
 2d_physics/layer_1="unit"
 2d_physics/layer_2="wall"
 2d_physics/layer_3="damage"

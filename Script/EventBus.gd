@@ -42,3 +42,6 @@ signal player_input_arrow()#玩家输入箭头
 signal player_input_clear_arrow()#玩家取消箭头输入
 
 signal player_info_list_update()#玩家组信息更新
+
+##切换世界房间
+signal change_world_room(roomOffset, roomProtalId)

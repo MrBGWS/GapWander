@@ -15,6 +15,17 @@ var maproomList:Array[MapRoom] = []
 
 func _ready() -> void:
     init_room()
+    
+    GameManager.eventBus.change_world_room.connect(ChangeRoom)
+
+##玩家转换房间
+func ChangeRoom(room_offset:Vector2i, room_protal_id:int):
+    var targetRoom = get_room_at(room_offset.x, room_offset.y)
+    if targetRoom != null:
+        var protalindex = targetRoom.protalList.find_custom(func(protal): return protal.protalID == room_protal_id)
+        if protalindex >= 0:
+            GameManager.playerUnit.global_position = targetRoom.protalList[protalindex].global_position 
+        
 
 #初始化所有房间
 func init_room():
@@ -35,10 +46,28 @@ func init_room():
         for x in range(grid_width):
             var room: MapRoom = maproomPrefab.instantiate()
             room.position = Vector2(x * room_size.x, y * room_size.y)
+            room.roomOffset = Vector2i(x, y)
             add_child(room)
             maproomList.append(room)
-
+    
+    #清除所有房间中没能联通的传送门
+    remove_unuse_protal()
+    
     print("房间初始化完成：%dx%d 网格，房间尺寸 %s" % [grid_width, grid_height, room_size])
+    
+##清除所有房间中没能联通的传送门
+func remove_unuse_protal():
+    for room:MapRoom in maproomList:
+        for oneProtal:Protal in room.protalList:
+            var roffset = oneProtal.targetOffset + room.roomOffset
+            var targetRoom = get_room_at(roffset.x, roffset.y)
+            if targetRoom == null:
+                room.RemoveOneProtal(oneProtal)
+                #oneProtal.queue_free()
+            else:
+                var targetProtalIndex = targetRoom.protalList.find_custom(func(prot): return oneProtal.targetProtalID == prot.protalID)
+                if targetProtalIndex < 0:
+                    room.RemoveOneProtal(oneProtal)
 
 # 获取指定坐标的房间（x, y为网格坐标）
 func get_room_at(grid_x: int, grid_y: int) -> MapRoom:
