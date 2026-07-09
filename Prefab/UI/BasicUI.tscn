@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bwc5em1lqq2a3"]
+
+[ext_resource type="Script" uid="uid://ben7xno7cgc37" path="res://Prefab/UI/UIRoot.gd" id="1_q4sis"]
+[ext_resource type="Script" uid="uid://xtyti20it0hx" path="res://Prefab/UI/SettingUI/setting_button.gd" id="2_nhig1"]
+[ext_resource type="PackedScene" uid="uid://dremanmgojbiv" path="res://Prefab/UI/ArrowShowUI/arrow_show_ui.tscn" id="3_ilgtd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vmp05"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+
+[node name="UI" type="CanvasLayer" unique_id=1517066184]
+script = ExtResource("1_q4sis")
+
+[node name="UtilsUI" type="Control" parent="." unique_id=1282498803]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RightUp" type="PanelContainer" parent="UtilsUI" unique_id=1868398769]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 100.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vmp05")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UtilsUI/RightUp" unique_id=136131865]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SettingButton" type="Button" parent="UtilsUI/RightUp/HBoxContainer" unique_id=172044930]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_nhig1")
+
+[node name="RightDown" type="Control" parent="UtilsUI" unique_id=157114836]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="ArrowShowUI" parent="." unique_id=105780084 instance=ExtResource("3_ilgtd")]

@@ -1,0 +1,95 @@
+[gd_scene load_steps=4 format=3 uid="uid://j4by1wpwrdds"]
+
+[ext_resource type="Script" uid="uid://b6jmtr3qwwcys" path="res://Prefab/UI/FirstSignInUI/first_sign_in_ui.gd" id="1_1sqn7"]
+[ext_resource type="Texture2D" uid="uid://dy0ohahrhb0ha" path="res://Asset/Art/UI/selectFrame.png" id="1_naxba"]
+[ext_resource type="Theme" uid="uid://cvtdw7tr4ebxj" path="res://Asset/Theme/ui_theme.tres" id="2_fhyqd"]
+
+[node name="FirstSignInUI" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1sqn7")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(0.18059999, 0.56559324, 0.86, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fhyqd")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = -152.0
+offset_right = 158.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "请输入名字"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameEdit" type="TextEdit" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -22.0
+offset_right = 143.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "a name is needed"
+
+[node name="ConfirmButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 271.0
+offset_right = 496.0
+offset_bottom = 372.0
+texture_normal = ExtResource("1_naxba")
+texture_pressed = ExtResource("1_naxba")
+texture_hover = ExtResource("1_naxba")
+texture_disabled = ExtResource("1_naxba")
+texture_focused = ExtResource("1_naxba")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Panel/ConfirmButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.5
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "确认"
+horizontal_alignment = 1
+vertical_alignment = 1

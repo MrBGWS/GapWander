@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dremanmgojbiv"]
+
+[ext_resource type="Script" uid="uid://cs0bklyxtqt2d" path="res://Prefab/UI/ArrowShowUI/arrow_show_ui.gd" id="1_4exrt"]
+
+[node name="ArrowShowUI" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+script = ExtResource("1_4exrt")
+
+[node name="ArrowParent" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -969.0
+offset_top = 107.0
+offset_right = 1011.0
+offset_bottom = 147.0
+theme_override_constants/separation = 4
+alignment = 1

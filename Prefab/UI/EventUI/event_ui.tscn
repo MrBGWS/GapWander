@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwodfrgvugy7k"]
+
+[ext_resource type="Script" uid="uid://dfyvfvdo0ahtf" path="res://Prefab/UI/EventUI/event_ui.gd" id="1_ocdh3"]
+[ext_resource type="Texture2D" uid="uid://dbp37nsjpo0um" path="res://Asset/Art/Scence/Library.png" id="2_sq0kn"]
+[ext_resource type="PackedScene" uid="uid://c74g02scwug1c" path="res://Prefab/UI/EventUI/select_botton.tscn" id="3_sq0kn"]
+[ext_resource type="Texture2D" uid="uid://c6mhkjxpfcnnq" path="res://Asset/Art/UI/panel.png" id="4_ri4s4"]
+[ext_resource type="FontFile" uid="uid://bh48n5yjyra6q" path="res://Asset/Front/LanaPixel.ttf" id="5_iriux"]
+[ext_resource type="PackedScene" uid="uid://uantjp1unqx0" path="res://Prefab/Dialogue/EventDialogBalloon.tscn" id="6_njbb5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfmo5"]
+bg_color = Color(0, 0, 0, 0.46666667)
+
+[node name="EventUI" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ocdh3")
+
+[node name="HistoryScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -664.0
+offset_top = -399.0
+offset_right = 679.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tfmo5")
+follow_focus = true
+draw_focus_border = true
+horizontal_scroll_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HistoryScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="HistoryScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_sq0kn")
+
+[node name="pad" type="Control" parent="HistoryScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25.715, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HistoryScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HistoryScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口测试测试测hi测hi策划和磁轭词和磁荷池此后西撒很多哈斯哦都察斯库觉得很难堪的接口"
+fit_content = true
+
+[node name="BottonGroup" type="VBoxContainer" parent="HistoryScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SelectBotton" parent="HistoryScrollContainer/HBoxContainer/VBoxContainer/BottonGroup" instance=ExtResource("3_sq0kn")]
+layout_mode = 2
+
+[node name="SelectBotton2" parent="HistoryScrollContainer/HBoxContainer/VBoxContainer/BottonGroup" instance=ExtResource("3_sq0kn")]
+layout_mode = 2
+
+[node name="SelectBotton3" parent="HistoryScrollContainer/HBoxContainer/VBoxContainer/BottonGroup" instance=ExtResource("3_sq0kn")]
+layout_mode = 2
+
+[node name="pad2" type="Control" parent="HistoryScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(25.715, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(700, 100)
+layout_mode = 0
+offset_left = 195.0
+offset_top = 56.0
+offset_right = 895.0
+offset_bottom = 216.0
+texture = ExtResource("4_ri4s4")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 56.0
+offset_right = 437.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("5_iriux")
+theme_override_font_sizes/font_size = 46
+text = "神秘事件"
+
+[node name="BalloonRoot" parent="." instance=ExtResource("6_njbb5")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 330.0
+offset_top = 145.0
+offset_right = 330.0
+offset_bottom = 145.0

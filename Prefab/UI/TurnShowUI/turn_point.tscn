@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn1vxro5lvxm5"]
+
+[ext_resource type="Texture2D" uid="uid://c1hsne3tk8w1t" path="res://Asset/Art/UI/up_button.png" id="1_0k02x"]
+[ext_resource type="Script" uid="uid://dsy474r1q5c85" path="res://Prefab/UI/TurnShowUI/turn_point.gd" id="2_os1fj"]
+
+[node name="TurnPoint" type="TextureRect"]
+offset_right = 16.0
+offset_bottom = 40.0
+texture = ExtResource("1_0k02x")
+expand_mode = 1
+script = ExtResource("2_os1fj")

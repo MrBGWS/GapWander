@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq7i04p17lt2x"]
+
+[ext_resource type="Script" uid="uid://do1wlc2u2eqs2" path="res://Prefab/UI/ActionRecordUI/one_action_record.gd" id="1_gpjcp"]
+
+[node name="OneActionRecord" type="HBoxContainer"]
+theme_override_constants/separation = 44
+script = ExtResource("1_gpjcp")
+
+[node name="WordText" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "一段很长很长很长很长很长很长很长很长很长很长的话"
+fit_content = true
+vertical_alignment = 1

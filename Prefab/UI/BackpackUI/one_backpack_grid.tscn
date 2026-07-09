@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ogtfk1gvtiua"]
+
+[ext_resource type="Texture2D" uid="uid://o12dglrnusmb" path="res://Asset/Art/UI/square.png" id="1_8bmyv"]
+
+[node name="OneBackpackGrid" type="TextureRect"]
+self_modulate = Color(1, 1, 1, 0.52156866)
+custom_minimum_size = Vector2(50, 50)
+mouse_filter = 2
+texture = ExtResource("1_8bmyv")
+expand_mode = 1

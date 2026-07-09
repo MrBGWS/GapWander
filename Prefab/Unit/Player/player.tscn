@@ -172,7 +172,11 @@ _data = {
 &"idle": SubResource("Animation_stuvd")
 }
 
-[node name="Player" type="Node2D" unique_id=688343418 groups=["unit"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlx0m"]
+
+[node name="Player" type="RigidBody2D" unique_id=1239678884 groups=["unit"]]
+collision_mask = 3
+gravity_scale = 0.0
 script = ExtResource("1_ed584")
 data = ExtResource("2_83a72")
 
@@ -207,3 +211,7 @@ autoplay = &"idle"
 [node name="PlayerUnitUI" parent="." unique_id=1913141245 instance=ExtResource("5_stuvd")]
 offset_top = 43.0
 offset_bottom = 83.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1165384136]
+position = Vector2(1, 50)
+shape = SubResource("RectangleShape2D_dlx0m")

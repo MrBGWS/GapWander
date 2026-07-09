@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=3 uid="uid://dgo8vga7n7dkl"]
+
+[ext_resource type="Script" uid="uid://dnnt6r0hk8jro" path="res://Prefab/UI/SettingUI/setting_ui.gd" id="1_7d17m"]
+[ext_resource type="LabelSettings" uid="uid://cotrhsx4wxg4o" path="res://Asset/Front/White&BlackTitle.tres" id="2_54f4w"]
+[ext_resource type="Theme" uid="uid://cvtdw7tr4ebxj" path="res://Asset/Theme/ui_theme.tres" id="3_jxi68"]
+[ext_resource type="Texture2D" uid="uid://dy0ohahrhb0ha" path="res://Asset/Art/UI/selectFrame.png" id="4_t2yhu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tfmo5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2yy4d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pg1jn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfmo5"]
+bg_color = Color(0, 0, 0, 0.46666667)
+
+[node name="SettingUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7d17m")
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tfmo5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2yy4d")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pg1jn")
+
+[node name="HistoryScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -185.0
+offset_right = 274.0
+offset_bottom = 194.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tfmo5")
+follow_focus = true
+draw_focus_border = true
+horizontal_scroll_mode = 3
+
+[node name="RecordListContain" type="VBoxContainer" parent="HistoryScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 29
+
+[node name="Title" type="Label" parent="HistoryScrollContainer/RecordListContain"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Setting"
+label_settings = ExtResource("2_54f4w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingResumeButton" type="Button" parent="HistoryScrollContainer/RecordListContain"]
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_jxi68")
+text = "Resume"
+icon = ExtResource("4_t2yhu")
+expand_icon = true
+
+[node name="SettingExitButton" type="Button" parent="HistoryScrollContainer/RecordListContain"]
+modulate = Color(1, 0.14999998, 0.14999998, 1)
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_jxi68")
+text = "Exit"
+icon = ExtResource("4_t2yhu")
+expand_icon = true

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ccy2lr6672cjx" path="res://Prefab/Unit/Player/player.tscn" id="3_hrxk3"]
 [ext_resource type="Script" uid="uid://c70vhfvpxuaij" path="res://Prefab/Map/WorldMap/room_root.gd" id="3_oa011"]
 [ext_resource type="PackedScene" uid="uid://d30mqnfcv7hjs" path="res://Prefab/Camera/phatom_camera_root.tscn" id="5_git68"]
+[ext_resource type="PackedScene" uid="uid://bwc5em1lqq2a3" path="res://Prefab/UI/BasicUI.tscn" id="7_c4h3j"]
 
 [node name="WorldRoot" type="Node2D" unique_id=920007211]
 script = ExtResource("1_djqym")
@@ -23,3 +24,5 @@ script = ExtResource("3_oa011")
 [node name="Player" parent="." unique_id=688343418 instance=ExtResource("3_hrxk3")]
 
 [node name="PhatomCameraRoot" parent="." unique_id=1127557992 instance=ExtResource("5_git68")]
+
+[node name="UI" parent="." unique_id=1315121970 instance=ExtResource("7_c4h3j")]

@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://7nhakjc0hnn0"]
+
+[ext_resource type="Script" uid="uid://bqprhjj6wqui4" path="res://Prefab/UI/BackpackUI/backpack_ui.gd" id="1_7bh6q"]
+[ext_resource type="PackedScene" uid="uid://ogtfk1gvtiua" path="res://Prefab/UI/BackpackUI/one_backpack_grid.tscn" id="1_h854o"]
+[ext_resource type="Texture2D" uid="uid://1k2vj6o1lp3" path="res://Asset/Art/Bullet/bullet_red.png" id="3_jlimo"]
+
+[node name="BackpackUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_7bh6q")
+
+[node name="BackpackGridRoot" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 4
+
+[node name="OneBackpackGrid" parent="BackpackGridRoot" instance=ExtResource("1_h854o")]
+layout_mode = 2
+
+[node name="OneBackpackGrid2" parent="BackpackGridRoot" instance=ExtResource("1_h854o")]
+layout_mode = 2
+
+[node name="OneBackpackGrid3" parent="BackpackGridRoot" instance=ExtResource("1_h854o")]
+layout_mode = 2
+
+[node name="OneBackpackGrid4" parent="BackpackGridRoot" instance=ExtResource("1_h854o")]
+layout_mode = 2
+
+[node name="OneBackpackGrid5" parent="BackpackGridRoot" instance=ExtResource("1_h854o")]
+layout_mode = 2
+
+[node name="OneBackpackGrid6" parent="BackpackGridRoot" instance=ExtResource("1_h854o")]
+layout_mode = 2
+
+[node name="OneBackpackGrid7" parent="BackpackGridRoot" instance=ExtResource("1_h854o")]
+layout_mode = 2
+
+[node name="OneBackpackGrid8" parent="BackpackGridRoot" instance=ExtResource("1_h854o")]
+layout_mode = 2
+
+[node name="OneBackpackGrid9" parent="BackpackGridRoot" instance=ExtResource("1_h854o")]
+layout_mode = 2
+
+[node name="OneBackpackGrid10" parent="BackpackGridRoot" instance=ExtResource("1_h854o")]
+layout_mode = 2
+
+[node name="OneBackpackGrid11" parent="BackpackGridRoot" instance=ExtResource("1_h854o")]
+layout_mode = 2
+
+[node name="OneBackpackGrid12" parent="BackpackGridRoot" instance=ExtResource("1_h854o")]
+layout_mode = 2
+
+[node name="OneBackpackGrid13" parent="BackpackGridRoot" instance=ExtResource("1_h854o")]
+layout_mode = 2
+
+[node name="OneBackpackGrid14" parent="BackpackGridRoot" instance=ExtResource("1_h854o")]
+layout_mode = 2
+
+[node name="OneBackpackGrid15" parent="BackpackGridRoot" instance=ExtResource("1_h854o")]
+layout_mode = 2
+
+[node name="OneBackpackGrid16" parent="BackpackGridRoot" instance=ExtResource("1_h854o")]
+layout_mode = 2
+
+[node name="SellArea" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 224.0
+offset_right = 269.0
+offset_bottom = 264.0
+texture = ExtResource("3_jlimo")

@@ -1,7 +1,12 @@
-[gd_resource type="Resource" script_class="UIConfig" format=3 uid="uid://cge50ub42maeb"]
+[gd_resource type="Resource" script_class="UIConfig" format=3 uid="uid://cgjdsi5k8misv"]
 
 [ext_resource type="Script" uid="uid://e10c6gdm16md" path="res://Script/UI/UIconfig.gd" id="1_ub1wn"]
+[ext_resource type="PackedScene" uid="uid://dgo8vga7n7dkl" path="res://Prefab/UI/SettingUI/setting_ui.tscn" id="2_2gmy0"]
+[ext_resource type="PackedScene" uid="uid://do1xpnbxchpwd" path="res://Prefab/UI/ActionRecordUI/actionRecord_ui.tscn" id="4_b2jde"]
 
 [resource]
 script = ExtResource("1_ub1wn")
-metadata/_custom_type_script = "uid://e10c6gdm16md"
+UIDic = Dictionary[int, PackedScene]({
+2: ExtResource("2_2gmy0"),
+3: ExtResource("4_b2jde")
+})

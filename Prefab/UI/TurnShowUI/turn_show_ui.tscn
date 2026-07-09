@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckuelbs2h68jv"]
+
+[ext_resource type="Texture2D" uid="uid://bhtdfrs7iwaow" path="res://Asset/Art/UI/commonbar.png" id="1_oqbcs"]
+[ext_resource type="Script" uid="uid://14i6memu5q5h" path="res://Prefab/UI/TurnShowUI/turn_show_ui.gd" id="1_wqp6e"]
+
+[node name="TurnShowUI" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+script = ExtResource("1_wqp6e")
+
+[node name="TimeLineParent" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 88.0
+offset_right = 40.0
+offset_bottom = 128.0
+
+[node name="BaseLine" type="TextureRect" parent="TimeLineParent"]
+layout_mode = 0
+offset_left = -173.0
+offset_top = -10.0
+offset_right = 227.0
+texture = ExtResource("1_oqbcs")
+expand_mode = 1

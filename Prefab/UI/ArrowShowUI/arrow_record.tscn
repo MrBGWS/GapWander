@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpjreuhptqbud"]
+
+[ext_resource type="Texture2D" uid="uid://c4r0nbpg4vsk1" path="res://Asset/Art/Icon/arrow_up.png" id="1_sk7u5"]
+[ext_resource type="Script" uid="uid://bmrc8weyohdmd" path="res://Prefab/UI/ArrowShowUI/arrow_record.gd" id="2_pxtob"]
+
+[node name="ArrowRoot" type="Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_pxtob")
+
+[node name="ArrowShow" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_sk7u5")

@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://do1xpnbxchpwd"]
+
+[ext_resource type="Script" uid="uid://chik0xpk5gm4n" path="res://Prefab/UI/ActionRecordUI/ActionRecordUI.gd" id="1_yaj8c"]
+[ext_resource type="LabelSettings" uid="uid://cotrhsx4wxg4o" path="res://Asset/Front/White&BlackTitle.tres" id="2_x2isf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfmo5"]
+bg_color = Color(0, 0, 0, 0.46666667)
+
+[node name="ActionRecordUI" type="Control" unique_id=663264261]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_yaj8c")
+
+[node name="HistoryScrollContainer" type="ScrollContainer" parent="." unique_id=1958974082]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -785.0
+offset_top = -358.0
+offset_right = -2.0
+offset_bottom = -76.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tfmo5")
+follow_focus = true
+draw_focus_border = true
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="RecordListContain" type="VBoxContainer" parent="HistoryScrollContainer" unique_id=463884572]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="HistoryScrollContainer/RecordListContain" unique_id=1988267241]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Record"
+label_settings = ExtResource("2_x2isf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1794679964]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -785.0
+offset_top = -75.0
+grow_horizontal = 0
+grow_vertical = 0

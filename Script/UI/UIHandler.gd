@@ -34,6 +34,13 @@ func CloseUI(id):
     if UIDic.has(id) :
         UIDic[id].CloseUI()
     GameManager.eventBus.one_ui_close.emit(id)
+    
+##没有的UI打开 已有的关闭
+func OpenOrCloseUI(id):
+    if UIDic.has(id) and UIDic[id].visible :
+        CloseUI(id)
+    else:
+        OpenUI(id)
 
 ##将索引为空的UI都清理了
 func RefreshUIDic():
